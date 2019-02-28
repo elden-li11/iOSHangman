@@ -121,6 +121,7 @@
                     </view>
                     <connections>
                         <outlet property="hangmanImage" destination="0GD-5r-FUn" id="g3h-pB-Ywx"/>
+                        <outlet property="incorrectGuesses" destination="F6w-6T-0zl" id="f1j-hd-Ddw"/>
                         <outlet property="puzzelWord" destination="av0-sG-wcY" id="Znt-eR-fDf"/>
                         <outlet property="puzzleWord" destination="av0-sG-wcY" id="3P2-5n-38E"/>
                     </connections>

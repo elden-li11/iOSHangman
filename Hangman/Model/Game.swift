@@ -12,12 +12,13 @@ class Game {
     var counter: Int
     var word: String
     var phrasesArray: [String]
-    
+    var incorrectGuesses: [String]
     
     init() {
         counter = 1
         word = ""
         phrasesArray = []
+        incorrectGuesses = []
         let phrasesObject = Phrases()
         if let pObject = phrasesObject.phrases as? [String] {
             phrasesArray = (pObject.shuffled())
