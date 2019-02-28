@@ -12,9 +12,10 @@ class Game {
     var counter: Int
     var word: String
     var phrasesArray: [String]
+    var correctGuesses: [String]
     var incorrectGuesses: [String]
-    var userWordDisplay: String
-    var originalUserWordDisplay: String
+    var userWordDisplay: String // current word state
+    var originalUserWordDisplay: String // original word state
     
     init() {
         userWordDisplay = ""
@@ -23,19 +24,11 @@ class Game {
         word = ""
         phrasesArray = []
         incorrectGuesses = []
+        correctGuesses = []
         let phrasesObject = Phrases()
         if let pObject = phrasesObject.phrases as? [String] {
             phrasesArray = (pObject.shuffled())
             word = phrasesArray[0]
-        }
-        for index in word.characters.indices {
-            if word[index] != " " {
-                userWordDisplay = userWordDisplay + "-"
-                originalUserWordDisplay = originalUserWordDisplay + "-"
-            } else {
-                userWordDisplay = userWordDisplay + " "
-                originalUserWordDisplay = originalUserWordDisplay + " "
-            }
         }
         print(word)
     }
@@ -50,5 +43,25 @@ class Game {
     
     func setWord(_ word: String) {
         self.word = word
+    }
+    
+    func setStartingWordDisplay() {
+        userWordDisplay = ""
+        originalUserWordDisplay = ""
+        for char in word {
+            if char != " " {
+                userWordDisplay.append("-")
+                originalUserWordDisplay.append("-")
+            } else {
+                userWordDisplay.append(" ")
+                originalUserWordDisplay.append(" ")
+            }
+        }
+    }
+    
+    func changeGuessWord() {
+        let index: Int = Int.random(in: 0..<6)
+        setWord(phrasesArray[index])
+        setStartingWordDisplay()
     }
 }
