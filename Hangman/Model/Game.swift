@@ -14,9 +14,11 @@ class Game {
     var phrasesArray: [String]
     var incorrectGuesses: [String]
     var userWordDisplay: String
+    var originalUserWordDisplay: String
     
     init() {
         userWordDisplay = ""
+        originalUserWordDisplay = ""
         counter = 1
         word = ""
         phrasesArray = []
@@ -29,8 +31,10 @@ class Game {
         for index in word.characters.indices {
             if word[index] != " " {
                 userWordDisplay = userWordDisplay + "-"
+                originalUserWordDisplay = originalUserWordDisplay + "-"
             } else {
                 userWordDisplay = userWordDisplay + " "
+                originalUserWordDisplay = originalUserWordDisplay + " "
             }
         }
         print(word)

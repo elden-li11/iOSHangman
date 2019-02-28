@@ -34,9 +34,6 @@ class HangmanViewController: UIViewController {
         if guessField.text!.count != 1 {
                 invalidInputAlert()
         } else {
-            if checkLetter(guessField.text) {
-                
-            }
             if checkLetter(guessField.text!) {
                 print("RIGHT")
                 // replace the dashes with letter
@@ -52,6 +49,9 @@ class HangmanViewController: UIViewController {
         game.counter = 0
         hangmanImage.image = startImage
         game.incorrectGuesses = []
+        incorrectGuesses.text = "Incorrect guesses: "
+        puzzelWord.text = game.originalUserWordDisplay
+        hangmanImage.image = startImage
     }
     
     //Resets the game upon the restart button press
@@ -69,7 +69,7 @@ class HangmanViewController: UIViewController {
     
     //When the user guesses wrong 7 times
     func gameOver(_ rightAnswer: String) {
-        let alertController = UIAlertController(title: "You Lost", message: "The right answer was " + game.word + ".", preferredStyle: UIAlertController.Style.alert)
+        let alertController = UIAlertController(title: "Hangman Died", message: "", preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "Restart", style: UIAlertAction.Style.default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
@@ -95,11 +95,12 @@ class HangmanViewController: UIViewController {
             if game.loseAGuess() == false {
                 hangmanImage.image = UIImage(named: "hangman" + String(game.counter))
                 gameOver(game.word)
+                restart()
             } else {
                 hangmanImage.image = UIImage(named: "hangman" + String(game.counter))
+                game.incorrectGuesses.append(letter)
+                incorrectGuesses.text = incorrectGuesses.text! + " " + letter
             }
-            game.incorrectGuesses.append(letter)
-            incorrectGuesses.text = incorrectGuesses.text! + " " + letter
         }
     }
 }
