@@ -34,6 +34,9 @@ class HangmanViewController: UIViewController {
         if guessField.text!.count != 1 {
                 invalidInputAlert()
         } else {
+            if checkLetter(guessField.text) {
+                
+            }
             if checkLetter(guessField.text!) {
                 print("RIGHT")
                 // replace the dashes with letter
@@ -48,6 +51,7 @@ class HangmanViewController: UIViewController {
     func restart() {
         game.counter = 0
         hangmanImage.image = startImage
+        game.incorrectGuesses = []
     }
     
     //Resets the game upon the restart button press
