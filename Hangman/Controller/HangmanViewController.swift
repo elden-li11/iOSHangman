@@ -14,20 +14,14 @@ class HangmanViewController: UIViewController {
     @IBOutlet weak var puzzleWord: UILabel!
     
     var count: Int = 1
-<<<<<<< HEAD
     let game = Game()
     let phrasesArray = Phrases()
-=======
-    var game = Game()
->>>>>>> dfe928365616e6a63d7230664728ad6504aeca05
-    
     let startImage = UIImage(named: "hangman1")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         hangmanImage.image = startImage
-<<<<<<< HEAD
     }
     
     @IBOutlet weak var puzzelWord: UILabel!
@@ -39,8 +33,6 @@ class HangmanViewController: UIViewController {
         if let mainWord = word as? String {
             puzzelWord.text = mainWord
         }
-=======
->>>>>>> dfe928365616e6a63d7230664728ad6504aeca05
     }
     
     @IBOutlet weak var guessField: UITextField!
