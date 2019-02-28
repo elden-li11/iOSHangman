@@ -11,6 +11,7 @@ import UIKit
 class HangmanViewController: UIViewController {
     
     @IBOutlet weak var hangmanImage: UIImageView!
+    @IBOutlet weak var puzzleWord: UILabel!
     
     var count: Int = 1
     let startImage = UIImage(named: "hangman1")
@@ -19,6 +20,15 @@ class HangmanViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         hangmanImage.image = startImage
+        
+    }
+    
+    var phrases : NSArray!
+    
+    init() {
+        // Replace "phrases" with your plist's filename
+        let path = Bundle.main.path(forResource: "phrases", ofType: "plist")
+        phrases = NSArray.init(contentsOfFile: path!)
     }
     
     @IBOutlet weak var guessField: UITextField!
