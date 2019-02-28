@@ -34,14 +34,12 @@ class HangmanViewController: UIViewController {
         if guessField.text!.count != 1 {
                 invalidInputAlert()
         } else {
-<<<<<<< HEAD
             if checkLetter(guessField.text) {
                 
-=======
+            }
             if checkLetter(guessField.text!) {
                 print("RIGHT")
                 // replace the dashes with letter
->>>>>>> 811c53b0ace6d743eaca420db2fd56e2a085c2bf
             } else {
                 print("WRONG")
                 wrongLetterInputed(guessField.text!)
@@ -52,6 +50,7 @@ class HangmanViewController: UIViewController {
     func restart() {
         game.counter = 0
         hangmanImage.image = startImage
+        game.incorrectGuesses = []
     }
     
     //Resets the game.
