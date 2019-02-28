@@ -28,23 +28,17 @@
                                     <constraint firstAttribute="height" constant="190" id="WwL-FT-glG"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ufo-AR-YUw" userLabel="stackView1">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="Ufo-AR-YUw" userLabel="stackView1">
                                 <rect key="frame" x="136" y="264" width="142" height="121.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initial word: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="av0-sG-wcY">
-                                        <rect key="frame" x="0.0" y="0.0" width="142" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="142" height="63.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incorrect guesses:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6w-6T-0zl">
-                                        <rect key="frame" x="0.0" y="50.5" width="142" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPc-Uh-3k1">
-                                        <rect key="frame" x="0.0" y="101" width="142" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="58.5" width="142" height="63"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -52,7 +46,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="pPc-Uh-3k1" firstAttribute="height" secondItem="av0-sG-wcY" secondAttribute="height" id="mIe-o1-wOR"/>
                                     <constraint firstItem="F6w-6T-0zl" firstAttribute="height" secondItem="av0-sG-wcY" secondAttribute="height" id="weu-jP-TXH"/>
                                 </constraints>
                             </stackView>
