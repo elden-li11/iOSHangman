@@ -15,6 +15,7 @@ class HangmanViewController: UIViewController {
     
     var count: Int = 1
     let game = Game()
+    let phrasesArray = Phrases()
     
     let startImage = UIImage(named: "hangman1")
     
@@ -22,23 +23,22 @@ class HangmanViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         hangmanImage.image = startImage
-        
     }
     
-    var phrases : NSArray!
+    @IBOutlet weak var puzzelWord: UILabel!
     
-    init() {
-        // Replace "phrases" with your plist's filename
-        let path = Bundle.main.path(forResource: "phrases", ofType: "plist")
-        phrases = NSArray.init(contentsOfFile: path!)
+    // sets the game's word to a random word from the phrases file in model. 
+    func puzzleWordInit() {
+        var phrase = (phrasesArray.phrases.shuffled())
+        let word = phrase[0]
+        if let mainWord = word as? String {
+            puzzelWord.text = mainWord
+        }
     }
     
     @IBOutlet weak var guessField: UITextField!
     
-    func textFieldBeganEditing(textField: UITextField) {
-        
-    }
-    
+    //Responds to the Guess Button being pressed, updating hangman or the wod
     @IBAction func guessPressed(_ sender: Any) {
         let gameState: Bool = game.loseAGuess()
         hangmanImage.image = UIImage(named: "hangman" + String(game.counter))
