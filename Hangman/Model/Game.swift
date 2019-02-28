@@ -53,8 +53,8 @@ class Game {
                 userWordDisplay.append("-")
                 originalUserWordDisplay.append("-")
             } else {
-                userWordDisplay.append(" ")
-                originalUserWordDisplay.append(" ")
+                userWordDisplay.append("  ")
+                originalUserWordDisplay.append("  ")
             }
         }
     }

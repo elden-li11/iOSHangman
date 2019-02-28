@@ -74,14 +74,14 @@ class HangmanViewController: UIViewController {
     
     //When the user wins
     func win() {
-        let alertController = UIAlertController(title: "You won", message: "Good fucking shit.", preferredStyle: UIAlertController.Style.alert)
+        let alertController = UIAlertController(title: "You won", message: "The word is: " + "'" + game.word + "'", preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "Play Again", style: UIAlertAction.Style.default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
     
     //When the user guesses wrong 7 times
     func gameOver(_ rightAnswer: String) {
-        let alertController = UIAlertController(title: "Hangman Died", message: "", preferredStyle: UIAlertController.Style.alert)
+        let alertController = UIAlertController(title: "Hangman Died", message: "Try Again", preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "Restart", style: UIAlertAction.Style.default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
@@ -93,6 +93,7 @@ class HangmanViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    //User inputs a character they have already guessed
     func repeatedInputAlert() {
         let alertController = UIAlertController(title: "Again?", message: "You entered this letter already.", preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: nil))
