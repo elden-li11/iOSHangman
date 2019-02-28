@@ -50,36 +50,20 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="sdr-M2-pyV" userLabel="stackView2">
-<<<<<<< HEAD
                                 <rect key="frame" x="141" y="415.5" width="132" height="120"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" text="Enter guess here " borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOL-mY-bdb">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOL-mY-bdb">
                                         <rect key="frame" x="0.0" y="0.0" width="132" height="30"/>
-=======
-                                <rect key="frame" x="168.5" y="415.5" width="77" height="120"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOL-mY-bdb">
-                                        <rect key="frame" x="0.0" y="0.0" width="77" height="30"/>
->>>>>>> 210904957d1ca5ba9699b1315406864702d25e59
                                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="132" id="EnU-nf-hhC"/>
                                             <constraint firstAttribute="height" constant="30" id="Ups-WB-s35"/>
                                         </constraints>
-<<<<<<< HEAD
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSR-1c-7rD">
                                         <rect key="frame" x="0.0" y="60" width="132" height="60"/>
-=======
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSR-1c-7rD">
-                                        <rect key="frame" x="0.0" y="60" width="77" height="60"/>
->>>>>>> 210904957d1ca5ba9699b1315406864702d25e59
                                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="LH9-Xr-Mkb"/>
