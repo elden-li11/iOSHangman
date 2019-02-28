@@ -35,7 +35,6 @@ class HangmanViewController: UIViewController {
         guessField.becomeFirstResponder()
     }
     
-    
     //Responds to the Guess Button being pressed, updating hangman or the wod
     @IBAction func guessPressed(_ sender: Any) {
         if guessField.text!.count != 1 {
@@ -80,7 +79,7 @@ class HangmanViewController: UIViewController {
     
     //When the user wins
     func win() {
-        let alertController = UIAlertController(title: "You won", message: "The word is: " + game.word + ".", preferredStyle: UIAlertController.Style.alert)
+        let alertController = UIAlertController(title: "You won", message: "The word is: " + "'" + game.word + "'" + ".", preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "Play Again", style: UIAlertAction.Style.default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
