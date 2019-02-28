@@ -34,8 +34,8 @@ class HangmanViewController: UIViewController {
         if guessField.text!.count != 1 {
                 invalidInputAlert()
         } else {
-            if checkLetter(game.word) {
-                // replace the dashes with letter
+            if checkLetter(guessField.text) {
+                
             } else {
                 
             }

@@ -33,6 +33,7 @@ class Game {
                 userWordDisplay = userWordDisplay + " "
             }
         }
+        print(word)
     }
     
     func loseAGuess() -> Bool {
