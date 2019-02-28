@@ -20,6 +20,7 @@ class HangmanViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        game.setStartingWordDisplay()
         hangmanImage.image = startImage
         puzzelWord.text = game.userWordDisplay
         guessField.text = ""
@@ -32,31 +33,35 @@ class HangmanViewController: UIViewController {
     //Responds to the Guess Button being pressed, updating hangman or the wod
     @IBAction func guessPressed(_ sender: Any) {
         if guessField.text!.count != 1 {
-                invalidInputAlert()
+            invalidInputAlert()
         } else {
-            if checkLetter(guessField.text) {
-                
-            }
             if checkLetter(guessField.text!) {
-                print("RIGHT")
-                // replace the dashes with letter
+                correctLetterInputed(guessField.text!)
             } else {
-                print("WRONG")
                 wrongLetterInputed(guessField.text!)
             }
         }
+        guessField.text = ""
     }
     
     //Restarts the game
-    func restart() {
+    func restart(_ changeWord: Bool) {
+        if changeWord == true {
+            game.changeGuessWord()
+        }
         game.counter = 0
         hangmanImage.image = startImage
         game.incorrectGuesses = []
+        game.correctGuesses = []
+        game.userWordDisplay = game.originalUserWordDisplay
+        incorrectGuesses.text = "Incorrect guesses: "
+        puzzelWord.text = game.originalUserWordDisplay
+        hangmanImage.image = startImage
     }
     
     //Resets the game upon the restart button press
     @IBAction func restartButtonPressed(_ sender: UIButton) {
-        restart()
+        restart(false)
     }
     
     //Checks if the users input matches a letter in the phrase
@@ -67,9 +72,16 @@ class HangmanViewController: UIViewController {
         return false
     }
     
+    //When the user wins
+    func win() {
+        let alertController = UIAlertController(title: "You won", message: "Good fucking shit.", preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Play Again", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     //When the user guesses wrong 7 times
     func gameOver(_ rightAnswer: String) {
-        let alertController = UIAlertController(title: "You Lost", message: "The right answer was " + game.word + ".", preferredStyle: UIAlertController.Style.alert)
+        let alertController = UIAlertController(title: "Hangman Died", message: "", preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "Restart", style: UIAlertAction.Style.default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
@@ -87,19 +99,46 @@ class HangmanViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    //Does shit when the user inputs a correct guess
+    func correctLetterInputed(_ letter: String) {
+        if !game.correctGuesses.contains(letter) {
+            var tempWordDisplay: String = ""
+            for char in game.word {
+                if game.correctGuesses.contains(String(char)) {
+                    tempWordDisplay.append(char)
+                } else if String(char) == letter {
+                    tempWordDisplay.append(char)
+                    game.correctGuesses.append(String(char))
+                } else if String(char) == " " {
+                    tempWordDisplay.append(char)
+                } else {
+                    tempWordDisplay.append("-")
+                }
+            }
+            game.userWordDisplay = tempWordDisplay
+            puzzelWord.text = game.userWordDisplay
+            
+            if game.userWordDisplay == game.word {
+                win()
+                restart(true)
+            }
+        }
+    }
+    
     //Does shit when the user inputs an incorrect guess
     func wrongLetterInputed(_ letter: String) {
-        if (game.incorrectGuesses.contains(letter)) {
+        if game.incorrectGuesses.contains(letter) {
             repeatedInputAlert()
         } else {
             if game.loseAGuess() == false {
                 hangmanImage.image = UIImage(named: "hangman" + String(game.counter))
                 gameOver(game.word)
+                restart(false)
             } else {
                 hangmanImage.image = UIImage(named: "hangman" + String(game.counter))
+                game.incorrectGuesses.append(letter)
+                incorrectGuesses.text = incorrectGuesses.text! + " " + letter
             }
-            game.incorrectGuesses.append(letter)
-            incorrectGuesses.text = incorrectGuesses.text! + " " + letter
         }
     }
 }
