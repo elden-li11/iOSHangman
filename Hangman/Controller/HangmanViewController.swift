@@ -14,6 +14,8 @@ class HangmanViewController: UIViewController {
     @IBOutlet weak var puzzleWord: UILabel!
     
     var count: Int = 1
+    let game = Game()
+    
     let startImage = UIImage(named: "hangman1")
     
     override func viewDidLoad() {
@@ -38,16 +40,16 @@ class HangmanViewController: UIViewController {
     }
     
     @IBAction func guessPressed(_ sender: Any) {
-        self.count += 1
-        hangmanImage.image = UIImage(named: "hangman" + String(count))
-        if (count == 7) {
+        let gameState: Bool = game.loseAGuess()
+        hangmanImage.image = UIImage(named: "hangman" + String(game.counter))
+        if (gameState == false) {
             gameOver("Cheesecake")
             restart()
         }
     }
     
     func restart() {
-        count = 0
+        game.counter = 0
         hangmanImage.image = startImage
     }
     
