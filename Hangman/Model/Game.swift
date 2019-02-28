@@ -11,10 +11,18 @@ import Foundation
 class Game {
     var counter: Int
     var word: String
+    var phrasesArray: [String]
+    
     
     init() {
         counter = 1
         word = ""
+        phrasesArray = []
+        let phrasesObject = Phrases()
+        if let pObject = phrasesObject.phrases as? [String] {
+            phrasesArray = (pObject.shuffled())
+            word = phrasesArray[0]
+        }
     }
     
     func loseAGuess() -> Bool {

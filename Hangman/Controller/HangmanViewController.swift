@@ -15,25 +15,16 @@ class HangmanViewController: UIViewController {
     
     var count: Int = 1
     let game = Game()
-    let phrasesArray = Phrases()
     let startImage = UIImage(named: "hangman1")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         hangmanImage.image = startImage
+        puzzelWord.text = game.word
     }
     
     @IBOutlet weak var puzzelWord: UILabel!
-    
-    // sets the game's word to a random word from the phrases file in model. 
-    func puzzleWordInit() {
-        var phrase = (phrasesArray.phrases.shuffled())
-        let word = phrase[0]
-        if let mainWord = word as? String {
-            puzzelWord.text = mainWord
-        }
-    }
     
     @IBOutlet weak var guessField: UITextField!
     
