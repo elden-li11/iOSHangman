@@ -12,11 +12,8 @@ class Game {
     var counter: Int
     var word: String
     var phrasesArray: [String]
-<<<<<<< HEAD
     var incorrectGuesses: [String]
-=======
     var userWordDisplay: String
->>>>>>> 7474244aac9c67d80f708aad83f6cd5492b59937
     
     init() {
         userWordDisplay = ""

@@ -30,20 +30,14 @@ class HangmanViewController: UIViewController {
     
     //Responds to the Guess Button being pressed, updating hangman or the wod
     @IBAction func guessPressed(_ sender: Any) {
-        if guessField.text.count != 1 {
-            invalidInputAlert()
-        } else if {
+        if guessField.text!.count != 1 {
+                invalidInputAlert()
+        } else {
             if checkLetter(game.word) {
                 // replace the dashes with letter
             } else {
                 
             }
-        }
-        let gameState: Bool = game.loseAGuess()
-        hangmanImage.image = UIImage(named: "hangman" + String(game.counter))
-        if (gameState == false) {
-            gameOver("Cheesecake")
-            restart()
         }
     }
     
@@ -86,8 +80,7 @@ class HangmanViewController: UIViewController {
         if (game.incorrectGuesses.contains(letter)) {
             repeatedInputAlert()
         } else {
-            incorrectGuesses.append(letter)
-            
+            game.incorrectGuesses.append(letter)
         }
     }
 }
