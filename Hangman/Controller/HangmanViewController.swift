@@ -34,10 +34,17 @@ class HangmanViewController: UIViewController {
         if guessField.text!.count != 1 {
                 invalidInputAlert()
         } else {
+<<<<<<< HEAD
             if checkLetter(guessField.text) {
                 
+=======
+            if checkLetter(guessField.text!) {
+                print("RIGHT")
+                // replace the dashes with letter
+>>>>>>> 811c53b0ace6d743eaca420db2fd56e2a085c2bf
             } else {
-                
+                print("WRONG")
+                wrongLetterInputed(guessField.text!)
             }
         }
     }
@@ -81,7 +88,15 @@ class HangmanViewController: UIViewController {
         if (game.incorrectGuesses.contains(letter)) {
             repeatedInputAlert()
         } else {
+            if game.loseAGuess() == false {
+                hangmanImage.image = UIImage(named: "hangman" + String(game.counter))
+                gameOver(game.word)
+               
+            } else {
+                hangmanImage.image = UIImage(named: "hangman" + String(game.counter))
+            }
             game.incorrectGuesses.append(letter)
+            incorrectGuesses.text = incorrectGuesses.text! + " " + letter
         }
     }
 }
