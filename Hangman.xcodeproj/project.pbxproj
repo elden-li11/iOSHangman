@@ -12,6 +12,7 @@
 		6BA6366F221C8F9E0000FB86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA6366D221C8F9E0000FB86 /* Main.storyboard */; };
 		6BA63671221C8FA00000FB86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BA63670221C8FA00000FB86 /* Assets.xcassets */; };
 		6BA63674221C8FA00000FB86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA63672221C8FA00000FB86 /* LaunchScreen.storyboard */; };
+		6CD57BB822278B9200583801 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD57BB722278B9200583801 /* Game.swift */; };
 		A249DC99222782710079899E /* pharases.plist in Resources */ = {isa = PBXBuildFile; fileRef = A249DC98222782710079899E /* pharases.plist */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		6BA63670221C8FA00000FB86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BA63673221C8FA00000FB86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BA63675221C8FA00000FB86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CD57BB722278B9200583801 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		A249DC98222782710079899E /* pharases.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = pharases.plist; sourceTree = "<group>"; };
 		A2A40B6922277EAA00DB3CF4 /* Model.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Model.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				A249DC98222782710079899E /* pharases.plist */,
+				6CD57BB722278B9200583801 /* Game.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BA6366C221C8F9E0000FB86 /* HangmanViewController.swift in Sources */,
+				6CD57BB822278B9200583801 /* Game.swift in Sources */,
 				6BA6366A221C8F9E0000FB86 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
