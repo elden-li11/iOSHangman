@@ -20,15 +20,21 @@ class HangmanViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        guessField.attributedPlaceholder = NSAttributedString(string: "Enter guess here: ",
+                           attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         game.setStartingWordDisplay()
         hangmanImage.image = startImage
         puzzelWord.text = game.userWordDisplay
-        guessField.text = ""
     }
     
     @IBOutlet weak var puzzelWord: UILabel!
     @IBOutlet weak var incorrectGuesses: UILabel!
     @IBOutlet weak var guessField: UITextField!
+    
+    @IBAction func guessFieldPressed(_ sender: Any) {
+        guessField.becomeFirstResponder()
+    }
+    
     
     //Responds to the Guess Button being pressed, updating hangman or the wod
     @IBAction func guessPressed(_ sender: Any) {
