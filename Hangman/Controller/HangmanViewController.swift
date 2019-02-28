@@ -40,7 +40,8 @@ class HangmanViewController: UIViewController {
         if guessField.text!.count != 1 {
             invalidInputAlert()
         } else {
-            if checkLetter(guessField.text!) {
+            guessField.text! = guessField.text!.lowercased()
+            if game.checkLetter(guessField.text!) {
                 correctLetterInputed(guessField.text!)
             } else {
                 wrongLetterInputed(guessField.text!)
@@ -51,14 +52,7 @@ class HangmanViewController: UIViewController {
     
     //Restarts the game
     func restart(_ changeWord: Bool) {
-        if changeWord == true {
-            game.changeGuessWord()
-        }
-        game.counter = 0
-        hangmanImage.image = startImage
-        game.incorrectGuesses = []
-        game.correctGuesses = []
-        game.userWordDisplay = game.originalUserWordDisplay
+        game.restart(changeWord)
         incorrectGuesses.text = "Incorrect guesses: "
         puzzelWord.text = game.originalUserWordDisplay
         hangmanImage.image = startImage
@@ -69,17 +63,9 @@ class HangmanViewController: UIViewController {
         restart(false)
     }
     
-    //Checks if the users input matches a letter in the phrase
-    func checkLetter(_ letter: String) -> Bool {
-        if (game.word.contains(letter)) {
-            return true
-        }
-        return false
-    }
-    
     //When the user wins
     func win() {
-        let alertController = UIAlertController(title: "You won", message: "The word is: " + "'" + game.word + "'" + ".", preferredStyle: UIAlertController.Style.alert)
+        let alertController = UIAlertController(title: "You won", message: "The word is: " + game.word + ".", preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "Play Again", style: UIAlertAction.Style.default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }

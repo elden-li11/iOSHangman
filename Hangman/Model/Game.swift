@@ -64,4 +64,21 @@ class Game {
         setWord(phrasesArray[index])
         setStartingWordDisplay()
     }
+    
+    func restart(_ changeWord: Bool) {
+        if changeWord == true {
+            changeGuessWord()
+        }
+        counter = 0
+        incorrectGuesses = []
+        correctGuesses = []
+        userWordDisplay = originalUserWordDisplay
+    }
+    
+    func checkLetter(_ letter: String) -> Bool {
+        if word.contains(letter) {
+            return true
+        }
+        return false
+    }
 }
