@@ -113,6 +113,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="guessField" destination="SOL-mY-bdb" id="kV5-0n-xzV"/>
                         <outlet property="hangmanImage" destination="0GD-5r-FUn" id="g3h-pB-Ywx"/>
                         <outlet property="incorrectGuesses" destination="F6w-6T-0zl" id="f1j-hd-Ddw"/>
                         <outlet property="puzzelWord" destination="av0-sG-wcY" id="Znt-eR-fDf"/>

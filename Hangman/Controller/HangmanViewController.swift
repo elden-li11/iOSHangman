@@ -22,6 +22,7 @@ class HangmanViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         hangmanImage.image = startImage
         puzzelWord.text = game.userWordDisplay
+        guessField.text = ""
     }
     
     @IBOutlet weak var puzzelWord: UILabel!
