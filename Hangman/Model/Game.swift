@@ -9,7 +9,13 @@
 import Foundation
 
 class Game {
-    var counter: Int = 1
+    var counter: Int
+    var word: String
+    
+    init() {
+        counter = 1
+        word = ""
+    }
     
     func loseAGuess() -> Bool {
         counter += 1
@@ -17,5 +23,9 @@ class Game {
             return false
         }
         return true
+    }
+    
+    func setWord(_ word: String) {
+        self.word = word
     }
 }
