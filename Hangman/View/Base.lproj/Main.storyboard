@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,79 +15,92 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HangmanViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wooden-background" translatesAutoresizingMaskIntoConstraints="NO" id="8uo-2D-zSd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSR-1c-7rD">
-                                <rect key="frame" x="145" y="469" width="85" height="56"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
-                                <state key="normal" title="Guess">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="guessPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w4i-nh-jX5"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0GD-5r-FUn">
-                                <rect key="frame" x="92" y="44" width="191" height="190"/>
+                                <rect key="frame" x="92" y="44" width="230" height="190"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="1Og-Zr-Sef"/>
                                     <constraint firstAttribute="height" constant="190" id="WwL-FT-glG"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ufo-AR-YUw">
-                                <rect key="frame" x="15" y="264" width="345" height="121"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ufo-AR-YUw" userLabel="stackView1">
+                                <rect key="frame" x="136" y="264" width="142" height="121.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="initial word (-)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="av0-sG-wcY">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="142" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incorrect guesses:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6w-6T-0zl">
-                                        <rect key="frame" x="0.0" y="50.333333333333314" width="345" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="50.5" width="142" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPc-Uh-3k1">
-                                        <rect key="frame" x="0.0" y="100.66666666666669" width="345" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="101" width="142" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="pPc-Uh-3k1" firstAttribute="height" secondItem="av0-sG-wcY" secondAttribute="height" id="mIe-o1-wOR"/>
+                                    <constraint firstItem="F6w-6T-0zl" firstAttribute="height" secondItem="av0-sG-wcY" secondAttribute="height" id="weu-jP-TXH"/>
+                                </constraints>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" text="Enter guess here " borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOL-mY-bdb">
-                                <rect key="frame" x="113.33333333333333" y="413" width="150" height="30"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="sdr-M2-pyV" userLabel="stackView2">
+                                <rect key="frame" x="129.5" y="415.5" width="155" height="120"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" text="Enter guess here " borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOL-mY-bdb">
+                                        <rect key="frame" x="0.0" y="0.0" width="155" height="30"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Ups-WB-s35"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSR-1c-7rD">
+                                        <rect key="frame" x="0.0" y="60" width="155" height="60"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="LH9-Xr-Mkb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
+                                        <state key="normal" title="Guess!">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="guessPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w4i-nh-jX5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KSR-1c-7rD" firstAttribute="width" secondItem="SOL-mY-bdb" secondAttribute="width" id="apg-yN-QXJ"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0GD-5r-FUn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1Z9-zV-dPd"/>
-                            <constraint firstItem="8uo-2D-zSd" firstAttribute="centerX" secondItem="0GD-5r-FUn" secondAttribute="centerX" id="1kS-To-dyJ"/>
                             <constraint firstAttribute="bottom" secondItem="8uo-2D-zSd" secondAttribute="bottom" id="9cf-nX-RMU"/>
                             <constraint firstItem="8uo-2D-zSd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Brj-Uv-UJ1"/>
                             <constraint firstItem="0GD-5r-FUn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Dt6-Bw-dMp"/>
-                            <constraint firstItem="KSR-1c-7rD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EdE-ff-IOb"/>
-                            <constraint firstItem="Ufo-AR-YUw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="HhL-qC-RP2"/>
-                            <constraint firstItem="Ufo-AR-YUw" firstAttribute="top" secondItem="0GD-5r-FUn" secondAttribute="bottom" constant="30" id="LIG-rr-0dq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sdr-M2-pyV" secondAttribute="bottom" constant="326.5" id="LGR-ml-y1e"/>
                             <constraint firstItem="8uo-2D-zSd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OMh-1P-xhz"/>
                             <constraint firstItem="Ufo-AR-YUw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aYs-jr-eHA"/>
-                            <constraint firstItem="SOL-mY-bdb" firstAttribute="top" secondItem="Ufo-AR-YUw" secondAttribute="bottom" constant="28" id="dUc-NJ-1va"/>
-                            <constraint firstItem="8uo-2D-zSd" firstAttribute="centerX" secondItem="KSR-1c-7rD" secondAttribute="centerX" id="kSS-VV-4s2"/>
-                            <constraint firstItem="SOL-mY-bdb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="3.1666666666666572" id="lKU-TG-04G"/>
-                            <constraint firstItem="8uo-2D-zSd" firstAttribute="centerX" secondItem="SOL-mY-bdb" secondAttribute="centerX" constant="-3.1666666666666572" id="llK-um-7aU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0GD-5r-FUn" secondAttribute="trailing" constant="92" id="n12-qz-eBR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ufo-AR-YUw" secondAttribute="trailing" constant="15" id="r57-Nd-6uZ"/>
-                            <constraint firstItem="KSR-1c-7rD" firstAttribute="top" secondItem="SOL-mY-bdb" secondAttribute="bottom" constant="26" id="tck-pS-cGn"/>
+                            <constraint firstItem="8uo-2D-zSd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="beu-Ew-AAV"/>
+                            <constraint firstItem="sdr-M2-pyV" firstAttribute="top" secondItem="Ufo-AR-YUw" secondAttribute="bottom" constant="30" id="ljD-b0-i5v"/>
+                            <constraint firstItem="sdr-M2-pyV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="t8l-8j-1ER"/>
+                            <constraint firstItem="Ufo-AR-YUw" firstAttribute="top" secondItem="0GD-5r-FUn" secondAttribute="bottom" constant="30" id="xMY-5H-lVv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

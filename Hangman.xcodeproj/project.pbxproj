@@ -35,10 +35,18 @@
 		6BA63670221C8FA00000FB86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BA63673221C8FA00000FB86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BA63675221C8FA00000FB86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2A40B6922277EAA00DB3CF4 /* Model.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Model.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6BA63663221C8F9E0000FB86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2A40B6622277EAA00DB3CF4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				6BA63666221C8F9E0000FB86 /* Hangman.app */,
+				A2A40B6922277EAA00DB3CF4 /* Model.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,20 +76,12 @@
 		6BA63668221C8F9E0000FB86 /* Hangman */ = {
 			isa = PBXGroup;
 			children = (
-				6BA6367B221C90F00000FB86 /* Model */,
 				6BA6367C221C90F40000FB86 /* View */,
 				6BA6367D221C91090000FB86 /* Controller */,
 				6BA6367E221C912C0000FB86 /* Supporting Files */,
 				6BA63675221C8FA00000FB86 /* Info.plist */,
 			);
 			path = Hangman;
-			sourceTree = "<group>";
-		};
-		6BA6367B221C90F00000FB86 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		6BA6367C221C90F40000FB86 /* View */ = {
@@ -130,6 +131,23 @@
 			productReference = 6BA63666221C8F9E0000FB86 /* Hangman.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A2A40B6822277EAA00DB3CF4 /* Model */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2A40B7C22277EAC00DB3CF4 /* Build configuration list for PBXNativeTarget "Model" */;
+			buildPhases = (
+				A2A40B6522277EAA00DB3CF4 /* Sources */,
+				A2A40B6622277EAA00DB3CF4 /* Frameworks */,
+				A2A40B6722277EAA00DB3CF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Model;
+			productName = Model;
+			productReference = A2A40B6922277EAA00DB3CF4 /* Model.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -141,6 +159,9 @@
 				ORGANIZATIONNAME = iosdecal;
 				TargetAttributes = {
 					6BA63665221C8F9E0000FB86 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					A2A40B6822277EAA00DB3CF4 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -159,6 +180,7 @@
 			projectRoot = "";
 			targets = (
 				6BA63665221C8F9E0000FB86 /* Hangman */,
+				A2A40B6822277EAA00DB3CF4 /* Model */,
 			);
 		};
 /* End PBXProject section */
@@ -174,6 +196,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A2A40B6722277EAA00DB3CF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -183,6 +212,13 @@
 			files = (
 				6BA6366C221C8F9E0000FB86 /* HangmanViewController.swift in Sources */,
 				6BA6366A221C8F9E0000FB86 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2A40B6522277EAA00DB3CF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +394,40 @@
 			};
 			name = Release;
 		};
+		A2A40B7D22277EAC00DB3CF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Model/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iosdecal.Model;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A2A40B7E22277EAC00DB3CF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Model/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iosdecal.Model;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -375,6 +445,15 @@
 			buildConfigurations = (
 				6BA63679221C8FA00000FB86 /* Debug */,
 				6BA6367A221C8FA00000FB86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2A40B7C22277EAC00DB3CF4 /* Build configuration list for PBXNativeTarget "Model" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2A40B7D22277EAC00DB3CF4 /* Debug */,
+				A2A40B7E22277EAC00DB3CF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
