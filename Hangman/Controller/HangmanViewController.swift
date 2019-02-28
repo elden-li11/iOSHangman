@@ -14,8 +14,8 @@ class HangmanViewController: UIViewController {
     @IBOutlet weak var puzzleWord: UILabel!
     
     var count: Int = 1
-    var game = Game()
-    
+    let game = Game()
+    let phrasesArray = Phrases()
     let startImage = UIImage(named: "hangman1")
     
     override func viewDidLoad() {
@@ -24,12 +24,20 @@ class HangmanViewController: UIViewController {
         hangmanImage.image = startImage
     }
     
-    @IBOutlet weak var guessField: UITextField!
+    @IBOutlet weak var puzzelWord: UILabel!
     
-    func textFieldBeganEditing(textField: UITextField) {
-        
+    // sets the game's word to a random word from the phrases file in model. 
+    func puzzleWordInit() {
+        var phrase = (phrasesArray.phrases.shuffled())
+        let word = phrase[0]
+        if let mainWord = word as? String {
+            puzzelWord.text = mainWord
+        }
     }
     
+    @IBOutlet weak var guessField: UITextField!
+    
+    //Responds to the Guess Button being pressed, updating hangman or the wod
     @IBAction func guessPressed(_ sender: Any) {
         let gameState: Bool = game.loseAGuess()
         hangmanImage.image = UIImage(named: "hangman" + String(game.counter))
