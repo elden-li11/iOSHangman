@@ -87,9 +87,22 @@
                                     <constraint firstItem="KSR-1c-7rD" firstAttribute="width" secondItem="SOL-mY-bdb" secondAttribute="width" id="apg-yN-QXJ"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chK-8q-a5F">
+                                <rect key="frame" x="343" y="44" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="1Su-V2-1eG"/>
+                                </constraints>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nYL-lx-EEU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="chK-8q-a5F" secondAttribute="trailing" constant="21" id="0fA-nW-xYF"/>
                             <constraint firstItem="0GD-5r-FUn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1Z9-zV-dPd"/>
                             <constraint firstAttribute="bottom" secondItem="8uo-2D-zSd" secondAttribute="bottom" id="9cf-nX-RMU"/>
                             <constraint firstItem="8uo-2D-zSd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Brj-Uv-UJ1"/>
@@ -98,7 +111,9 @@
                             <constraint firstItem="8uo-2D-zSd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OMh-1P-xhz"/>
                             <constraint firstItem="Ufo-AR-YUw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aYs-jr-eHA"/>
                             <constraint firstItem="8uo-2D-zSd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="beu-Ew-AAV"/>
+                            <constraint firstItem="chK-8q-a5F" firstAttribute="leading" secondItem="0GD-5r-FUn" secondAttribute="trailing" constant="21" id="gXB-xA-X4y"/>
                             <constraint firstItem="sdr-M2-pyV" firstAttribute="top" secondItem="Ufo-AR-YUw" secondAttribute="bottom" constant="30" id="ljD-b0-i5v"/>
+                            <constraint firstItem="chK-8q-a5F" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qQ8-Ol-fCK"/>
                             <constraint firstItem="sdr-M2-pyV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="t8l-8j-1ER"/>
                             <constraint firstItem="Ufo-AR-YUw" firstAttribute="top" secondItem="0GD-5r-FUn" secondAttribute="bottom" constant="30" id="xMY-5H-lVv"/>
                         </constraints>
